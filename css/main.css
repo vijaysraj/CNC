@@ -48,11 +48,12 @@ a:focus {
   z-index: 99999;
 }
 #main-slider {
-  background-image: url(../images/slider-bg.jpg);
+  background-image: url(../images/cnc_bg.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+  backface-visibility: hidden;
   padding: 200px 0;
   color: #fff;
 }
