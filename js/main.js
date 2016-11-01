@@ -7,15 +7,27 @@ jQuery(function($) {
 		});
 	});
 
-	//Ajax contact
-	var form = $('.contact-form');
-	form.submit(function () {
-		$this = $(this);
-		$.post($(this).attr('action'), function(data) {
-			$this.prev().text(data.message).fadeIn().delay(3000).fadeOut();
-		},'json');
-		return false;
+	$("#send-email").click(function(){
+		console.log("I'm in")
+		var body_message = $('#message').value;
+		var email = 'vijaysraj006@gmail.com';
+		var subject = 'Contact';
+
+		var mailto_link = 'mailto:' + email + '?subject=' + subject + '&body=' + body_message;
+
+    win = window.open(mailto_link, 'emailWindow');
+    if (win && win.open && !win.closed) win.close();
 	});
+
+	//Ajax contact
+	// var form = $('.contact-form');
+	// form.submit(function () {
+	// 	$this = $(this);
+	// 	$.post($(this).attr('action'), function(data) {
+	// 		$this.prev().text(data.message).fadeIn().delay(3000).fadeOut();
+	// 	},'json');
+	// 	return false;
+	// });
 
 	//smooth scroll
 	$('.navbar-nav > li').click(function(event) {
